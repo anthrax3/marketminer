@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5604998E-0EE7-4AFF-A999-DCC4B80148CB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MarketMiner.Algorithm.Common</RootNamespace>
+    <AssemblyName>MarketMiner.Algorithm.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PatternDetectors\PatternDetectorBase.cs" />
+    <Compile Include="PatternFactories\PatternFactoryBase.cs" />
+    <Compile Include="PatternFactories\ThrustFactory.cs" />
+    <Compile Include="TradingAlgorithmBase.cs" />
+    <Compile Include="AlgorithmBase.cs" />
+    <Compile Include="AlgorithmFactory.cs" />
+    <Compile Include="AlgorithmModuleAttribute.cs" />
+    <Compile Include="AlgorithmParameters.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Contracts\IAlgorithm.cs" />
+    <Compile Include="Contracts\IAlgorithmFactory.cs" />
+    <Compile Include="Contracts\IPriceCalculator.cs" />
+    <Compile Include="Contracts\IBacktest.cs" />
+    <Compile Include="Identifiers.cs" />
+    <Compile Include="PatternDetectors\ThrustDetector03.cs" />
+    <Compile Include="PatternDetectors\ThrustDetector00.cs" />
+    <Compile Include="PatternDetectors\ThrustDetectorBase.cs" />
+    <Compile Include="PatternDetectors\ThrustDetector01.cs" />
+    <Compile Include="PatternDetectors\ThrustDetector02.cs" />
+    <Compile Include="PriceCalculators\ThrustStopLossPriceCalculator00.cs" />
+    <Compile Include="PriceCalculators\ThrustTakeProfitPriceCalculator00.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AlgorithmReport.cs" />
+    <Compile Include="Utilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Release\N.Core.Common.Contracts\N.Core.Common.Contracts.csproj">
+      <Project>{c64c8171-8042-4210-89b2-b302a9d9cded}</Project>
+      <Name>N.Core.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Release\N.Core.Common\N.Core.Common.csproj">
+      <Project>{b3dee307-900f-4250-99c4-8be909efdb1d}</Project>
+      <Name>N.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Release\P.Core.Client\P.Core.Client.csproj">
+      <Project>{f5af57ed-c43b-4030-b010-788f167fce5b}</Project>
+      <Name>P.Core.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Release\P.Core.Common.Contracts\P.Core.Common.Contracts.csproj">
+      <Project>{b45a1e02-ddcf-414b-868b-60a3a47d358b}</Project>
+      <Name>P.Core.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Release\P.Core.Common\P.Core.Common.csproj">
+      <Project>{c8826a2a-c0b5-4ff0-8a81-0c0cd4335ec1}</Project>
+      <Name>P.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Api.Client.Common\MarketMiner.Api.Client.Common.csproj">
+      <Project>{736dc257-4fb2-44a8-8458-48f4fbce3069}</Project>
+      <Name>MarketMiner.Api.Client.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Api.Common\MarketMiner.Api.Common.csproj">
+      <Project>{a02db3e7-9e3f-4398-882b-b8dda9cdcb81}</Project>
+      <Name>MarketMiner.Api.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Client.Contracts\MarketMiner.Client.Contracts.csproj">
+      <Project>{c47d30a6-5330-49bc-8cda-e7c38d87c869}</Project>
+      <Name>MarketMiner.Client.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Client.Entities\MarketMiner.Client.Entities.csproj">
+      <Project>{e43f67a1-ef9f-406a-8639-9e9fbb9b12da}</Project>
+      <Name>MarketMiner.Client.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Client.Proxies\MarketMiner.Client.Proxies.csproj">
+      <Project>{fe309c6d-19b9-4d30-8b05-82eed92cc9aa}</Project>
+      <Name>MarketMiner.Client.Proxies</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Common.Contracts\MarketMiner.Common.Contracts.csproj">
+      <Project>{220aa4d4-dda8-4e39-8e0a-819aa4e8b56d}</Project>
+      <Name>MarketMiner.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Common\MarketMiner.Common.csproj">
+      <Project>{110c07d3-3af7-4129-b9c9-85d8263b641b}</Project>
+      <Name>MarketMiner.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

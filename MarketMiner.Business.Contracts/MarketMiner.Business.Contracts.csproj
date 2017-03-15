@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF0CD47D-E2B0-4A02-9EA2-829E45C0D1D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MarketMiner.Business.Contracts</RootNamespace>
+    <AssemblyName>MarketMiner.Business.Contracts</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessEngineContracts\IParticipationEngine.cs" />
+    <Compile Include="BusinessEngineContracts\IStrategyEngine.cs" />
+    <Compile Include="BusinessEngineContracts\ISubscriptionEngine.cs" />
+    <Compile Include="IMailer.cs" />
+    <Compile Include="IMailerFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceContracts\IAccountService.cs" />
+    <Compile Include="ServiceContracts\IMetadataService.cs" />
+    <Compile Include="ServiceContracts\IParticipationService.cs" />
+    <Compile Include="ServiceContracts\IStrategyService.cs" />
+    <Compile Include="ServiceContracts\ISubscriptionService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Release\N.Core.Business\N.Core.Business.csproj">
+      <Project>{63c5f965-36b9-4a25-ae5f-0b401fc9995a}</Project>
+      <Name>N.Core.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Release\N.Core.Common\N.Core.Common.csproj">
+      <Project>{b3dee307-900f-4250-99c4-8be909efdb1d}</Project>
+      <Name>N.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Release\P.Core.Common.Contracts\P.Core.Common.Contracts.csproj">
+      <Project>{b45a1e02-ddcf-414b-868b-60a3a47d358b}</Project>
+      <Name>P.Core.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Release\P.Core.Common\P.Core.Common.csproj">
+      <Project>{c8826a2a-c0b5-4ff0-8a81-0c0cd4335ec1}</Project>
+      <Name>P.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Business.Entities\MarketMiner.Business.Entities.csproj">
+      <Project>{5c8dc230-186f-4686-8ba9-90c2edc3158b}</Project>
+      <Name>MarketMiner.Business.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Common.Contracts\MarketMiner.Common.Contracts.csproj">
+      <Project>{220aa4d4-dda8-4e39-8e0a-819aa4e8b56d}</Project>
+      <Name>MarketMiner.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Common\MarketMiner.Common.csproj">
+      <Project>{110c07d3-3af7-4129-b9c9-85d8263b641b}</Project>
+      <Name>MarketMiner.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataContracts\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

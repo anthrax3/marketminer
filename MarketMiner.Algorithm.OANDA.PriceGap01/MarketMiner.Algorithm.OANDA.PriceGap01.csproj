@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{042461D2-E408-4FC8-A9FF-FD39D68E412F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MarketMiner.Algorithm.OANDA.PriceGap01</RootNamespace>
+    <AssemblyName>MarketMiner.Algorithm.OANDA.PriceGap01</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PriceGap01.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Release\N.Core.Common\N.Core.Common.csproj">
+      <Project>{b3dee307-900f-4250-99c4-8be909efdb1d}</Project>
+      <Name>N.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Release\P.Core.Client\P.Core.Client.csproj">
+      <Project>{f5af57ed-c43b-4030-b010-788f167fce5b}</Project>
+      <Name>P.Core.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Release\P.Core.Common.Contracts\P.Core.Common.Contracts.csproj">
+      <Project>{B45A1E02-DDCF-414B-868B-60A3A47D358B}</Project>
+      <Name>P.Core.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Release\P.Core.Common\P.Core.Common.csproj">
+      <Project>{c8826a2a-c0b5-4ff0-8a81-0c0cd4335ec1}</Project>
+      <Name>P.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Algorithm.Common\MarketMiner.Algorithm.Common.csproj">
+      <Project>{5604998e-0ee7-4aff-a999-dcc4b80148cb}</Project>
+      <Name>MarketMiner.Algorithm.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Algorithm.OANDA.Common\MarketMiner.Algorithm.OANDA.Common.csproj">
+      <Project>{EC5F7120-1D69-446E-9963-7B6A8B2C38A9}</Project>
+      <Name>MarketMiner.Algorithm.OANDA.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Api.Client.Common\MarketMiner.Api.Client.Common.csproj">
+      <Project>{736DC257-4FB2-44A8-8458-48F4FBCE3069}</Project>
+      <Name>MarketMiner.Api.Client.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Api.Client.OANDA\MarketMiner.Api.Client.OANDA.csproj">
+      <Project>{F6AC1FAB-762F-4659-8E6D-78C543941805}</Project>
+      <Name>MarketMiner.Api.Client.OANDA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Api.Common\MarketMiner.Api.Common.csproj">
+      <Project>{A02DB3E7-9E3F-4398-882B-B8DDA9CDCB81}</Project>
+      <Name>MarketMiner.Api.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Api.OANDA.Extensions\MarketMiner.Api.OANDA.Extensions.csproj">
+      <Project>{8C25C859-832D-4F15-A512-C59684C6C523}</Project>
+      <Name>MarketMiner.Api.OANDA.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Api.OANDA\MarketMiner.Api.OANDA.csproj">
+      <Project>{01F10C6A-2C92-42A7-A637-1464B60A6C3B}</Project>
+      <Name>MarketMiner.Api.OANDA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Client.Contracts\MarketMiner.Client.Contracts.csproj">
+      <Project>{C47D30A6-5330-49BC-8CDA-E7C38D87C869}</Project>
+      <Name>MarketMiner.Client.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Client.Entities\MarketMiner.Client.Entities.csproj">
+      <Project>{E43F67A1-EF9F-406A-8639-9E9FBB9B12DA}</Project>
+      <Name>MarketMiner.Client.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Common.Contracts\MarketMiner.Common.Contracts.csproj">
+      <Project>{220AA4D4-DDA8-4E39-8E0A-819AA4E8B56D}</Project>
+      <Name>MarketMiner.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Common\MarketMiner.Common.csproj">
+      <Project>{110C07D3-3AF7-4129-B9C9-85D8263B641B}</Project>
+      <Name>MarketMiner.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

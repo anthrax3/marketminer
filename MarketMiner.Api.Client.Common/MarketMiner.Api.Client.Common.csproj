@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{736DC257-4FB2-44A8-8458-48F4FBCE3069}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MarketMiner.Api.Client.Common</RootNamespace>
+    <AssemblyName>MarketMiner.Api.Client.Common</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <ProjectReference Include="..\..\..\Core\Release\P.Core.Common\P.Core.Common.csproj">
+      <Project>{c8826a2a-c0b5-4ff0-8a81-0c0cd4335ec1}</Project>
+      <Name>P.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Api.Common\MarketMiner.Api.Common.csproj">
+      <Project>{a02db3e7-9e3f-4398-882b-b8dda9cdcb81}</Project>
+      <Name>MarketMiner.Api.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Charting\Studies\FibonacciRetracement.cs" />
+    <Compile Include="Charting\Studies\Study.cs" />
+    <Compile Include="Charting\Studies\IStudy.cs" />
+    <Compile Include="Charting\PriceBar.cs" />
+    <Compile Include="Charting\Chart.cs" />
+    <Compile Include="Charting\Indicators\DetrendedOscillator.cs" />
+    <Compile Include="Charting\Indicators\DisplacedMovingAverage.cs" />
+    <Compile Include="Charting\Frame.cs" />
+    <Compile Include="Charting\Indicators\IIndicator.cs" />
+    <Compile Include="Charting\Indicators\Indicator.cs" />
+    <Compile Include="Charting\Indicators\MovingAverage.cs" />
+    <Compile Include="Charting\Indicators\MACD.cs" />
+    <Compile Include="Charting\Indicators\ExponentialMovingAverage.cs" />
+    <Compile Include="Charting\Indicators\SimpleMovingAverage.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Contracts\IParameters.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Contracts\IPattern.cs" />
+    <Compile Include="Patterns\Pattern.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Patterns\Dinapoli\RailroadTrack.cs" />
+    <Compile Include="Patterns\Dinapoli\Thrust.cs" />
+    <Compile Include="Patterns\PriceGap.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

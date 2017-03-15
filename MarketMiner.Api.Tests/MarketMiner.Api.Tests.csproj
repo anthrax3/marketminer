@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C68C6109-7DC1-4249-9071-6DF6E1EB2A44}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MarketMiner.Api.Tests</RootNamespace>
+    <AssemblyName>MarketMiner.Api.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OANDA\CandlesTest.cs" />
+    <Compile Include="Custom\CustomOANDARestTest.cs" />
+    <Compile Include="OANDA\LabsTest.cs" />
+    <Compile Include="OANDA\RestTestBase.cs" />
+    <Compile Include="OANDA\RestTestResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OANDA\RestTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Release\P.Core.Common\P.Core.Common.csproj">
+      <Project>{C8826A2A-C0B5-4FF0-8A81-0C0CD4335EC1}</Project>
+      <Name>P.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Api.Common\MarketMiner.Api.Common.csproj">
+      <Project>{a02db3e7-9e3f-4398-882b-b8dda9cdcb81}</Project>
+      <Name>MarketMiner.Api.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Api.OANDA\MarketMiner.Api.OANDA.csproj">
+      <Project>{01f10c6a-2c92-42a7-a637-1464b60a6c3b}</Project>
+      <Name>MarketMiner.Api.OANDA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Common.Contracts\MarketMiner.Common.Contracts.csproj">
+      <Project>{220aa4d4-dda8-4e39-8e0a-819aa4e8b56d}</Project>
+      <Name>MarketMiner.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Common\MarketMiner.Common.csproj">
+      <Project>{110c07d3-3af7-4129-b9c9-85d8263b641b}</Project>
+      <Name>MarketMiner.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

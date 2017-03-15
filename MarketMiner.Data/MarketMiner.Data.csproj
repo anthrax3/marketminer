@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D5985055-9ECC-4155-86D8-AE2F68B5EC92}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MarketMiner.Data</RootNamespace>
+    <AssemblyName>MarketMiner.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EFCache, Version=1.0.0.0, Culture=neutral, PublicKeyToken=46c4868af4307d2c, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Cache.1.0.0\lib\net45\EFCache.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configurations\ContextConfiguration.cs" />
+    <Compile Include="Configurations\EntityTypeConfigurations.cs" />
+    <Compile Include="MarketMinerCache.cs" />
+    <Compile Include="MarketMinerCachingPolicy.cs" />
+    <Compile Include="MarketMinerContext.cs" />
+    <Compile Include="MarketMinerContextInitializer.cs" />
+    <Compile Include="MarketMinerRepositoryFactory.cs" />
+    <Compile Include="Migrations\201701042235477_InitialCreate.cs" />
+    <Compile Include="Migrations\201701042235477_InitialCreate.Designer.cs">
+      <DependentUpon>201701042235477_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701051329282_UpdateSignal.cs" />
+    <Compile Include="Migrations\201701051329282_UpdateSignal.Designer.cs">
+      <DependentUpon>201701051329282_UpdateSignal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AccountRepository.cs" />
+    <Compile Include="Repositories\AlgorithmMessageRepository.cs" />
+    <Compile Include="Repositories\AlgorithmParameterRepository.cs" />
+    <Compile Include="Repositories\AlgorithmInstanceRepository.cs" />
+    <Compile Include="Repositories\BrokerRepository.cs" />
+    <Compile Include="Repositories\CommunicationTemplateRepository.cs" />
+    <Compile Include="Repositories\CommunicationRepository.cs" />
+    <Compile Include="Repositories\MetaFieldDefinitionRepository.cs" />
+    <Compile Include="Repositories\MetaLookupRepository.cs" />
+    <Compile Include="Repositories\MetaResourceRepository.cs" />
+    <Compile Include="Repositories\MetaSettingRepository.cs" />
+    <Compile Include="Repositories\MarketMinerRepositoryBase.cs" />
+    <Compile Include="Repositories\FundRepository.cs" />
+    <Compile Include="Repositories\ParticipationRepository.cs" />
+    <Compile Include="Repositories\AllocationRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\SubscriptionRepository.cs" />
+    <Compile Include="Repositories\StrategyTransactionRepository.cs" />
+    <Compile Include="Repositories\StrategyRepository.cs" />
+    <Compile Include="Repositories\SignalRepository.cs" />
+    <Compile Include="Repositories\ReservationRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Release\N.Core.Common\N.Core.Common.csproj">
+      <Project>{b3dee307-900f-4250-99c4-8be909efdb1d}</Project>
+      <Name>N.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Release\P.Core.Common.Contracts\P.Core.Common.Contracts.csproj">
+      <Project>{b45a1e02-ddcf-414b-868b-60a3a47d358b}</Project>
+      <Name>P.Core.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Release\P.Core.Common\P.Core.Common.csproj">
+      <Project>{c8826a2a-c0b5-4ff0-8a81-0c0cd4335ec1}</Project>
+      <Name>P.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Business.Entities\MarketMiner.Business.Entities.csproj">
+      <Project>{5c8dc230-186f-4686-8ba9-90c2edc3158b}</Project>
+      <Name>MarketMiner.Business.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Common.Contracts\MarketMiner.Common.Contracts.csproj">
+      <Project>{220aa4d4-dda8-4e39-8e0a-819aa4e8b56d}</Project>
+      <Name>MarketMiner.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Common\MarketMiner.Common.csproj">
+      <Project>{110c07d3-3af7-4129-b9c9-85d8263b641b}</Project>
+      <Name>MarketMiner.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MarketMiner.Data.Contracts\MarketMiner.Data.Contracts.csproj">
+      <Project>{29f3757d-94fb-4690-9f2a-c4b3979f79bc}</Project>
+      <Name>MarketMiner.Data.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701042235477_InitialCreate.resx">
+      <DependentUpon>201701042235477_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701051329282_UpdateSignal.resx">
+      <DependentUpon>201701051329282_UpdateSignal.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
